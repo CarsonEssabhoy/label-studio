@@ -1,0 +1,15 @@
+<View>
+  <Labels name="label" toName="audio" choice="multiple">
+    <Label value="Cough" background="#98C84E"></Label>
+  </Labels>
+  <Header value="Listen the audio:"></Header>
+  <AudioPlus name="audio" value="$url" cursorcolor="#FF0000" cursorwidth="4"/>
+  <Header value="Reason" />
+  <Choices name="reason" toName="audio" perRegion="false" required="true" choice="multiple">
+    <Choice value="No cough"/>
+    <Choice value="Background noise"/>
+    <Choice value="Talking"/>
+    <Choice value="Poor audio quality"/>
+  </Choices>
+  <TextArea name="comment" toName="audio" editable="true" placeholder="Write any additional notes here..." />
+</View>

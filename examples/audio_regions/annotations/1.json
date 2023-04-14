@@ -1,0 +1,28 @@
+{
+    "annotations": [
+        {
+            "id": "1001",
+            "result": [
+                {
+                    "from_name": "label",
+                    "id": "SsGrpVgy_C",
+                    "source": "$url",
+                    "to_name": "audio",
+                    "type": "labels",
+                    "value": {
+                        "end": 28.50568583621215,
+                        "labels": [
+                            "Cough"
+                        ],
+                        "start": 12.778410892095105
+                    }
+                }
+            ]
+        }
+    ],
+    "data": {
+        "url": "https://htx-misc.s3.amazonaws.com/opensource/label-studio/examples/audio/barradeen-emotional.mp3"
+    },
+    "id": 1,
+    "task_path": "../examples/audio_regions/tasks.json"
+}
