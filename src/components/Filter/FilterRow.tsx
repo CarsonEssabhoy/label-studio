@@ -33,11 +33,11 @@ export const FilterRow: FC<FilterRowInterface> = ({
   const [_inputComponent, setInputComponent] = useState(null);
 
   useEffect(() => {
-    onChange(index, { field:availableFilters[_selectedField].label, path: availableFilters[_selectedField].path, operation:'', value:'' });
+    onChange(index, { field: availableFilters[_selectedField].label, path: availableFilters[_selectedField].path, operation: '', value: '' });
   }, [_selectedField]);
 
   useEffect(() => {
-    if(!isDefined(_selectedOperation) || _selectedOperation < 0) return;
+    if (!isDefined(_selectedOperation) || _selectedOperation < 0) return;
     const _filterInputs = FilterInputs?.[availableFilters[_selectedField].type][_selectedOperation];
 
     onChange(index, { operation: _filterInputs?.key });

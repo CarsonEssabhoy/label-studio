@@ -10,7 +10,7 @@ export default {
     'checked': '',
     'defaultValue': false,
   },
-  'enableLabelTooltips':{
+  'enableLabelTooltips': {
     'description': 'Show labels hotkey tooltips',
     'onChangeEvent': 'toggleLabelTooltips',
     'defaultValue': true,

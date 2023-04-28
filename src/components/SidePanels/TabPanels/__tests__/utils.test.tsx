@@ -308,7 +308,7 @@ describe('splitPanelColumns', () => {
   const panel3 = 'panel3';
   const totalHeight = 1000;
   const panelAttributes = {
-    panelViews:[{ name: 'view1', component: () => null }],
+    panelViews: [{ name: 'view1', component: () => null }],
     order: 0,
     width: DEFAULT_PANEL_WIDTH,
     height: DEFAULT_PANEL_HEIGHT,

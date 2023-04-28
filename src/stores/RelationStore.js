@@ -161,7 +161,7 @@ const RelationStore = types
     },
 
     deleteRelation(rl) {
-      self._relations = self._relations.filter( r => r.id !== rl.id);
+      self._relations = self._relations.filter(r => r.id !== rl.id);
       destroy(rl);
     },
 

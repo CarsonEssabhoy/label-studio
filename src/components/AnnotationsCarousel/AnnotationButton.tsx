@@ -2,7 +2,7 @@ import { Block, Elem } from '../../utils/bem';
 import { Userpic } from '../../common/Userpic/Userpic';
 import { IconAnnotationGroundTruth, IconAnnotationSkipped2, IconDraftCreated2, IconDuplicate, IconEllipsis, IconTrashRect, LsComment, LsCommentRed, LsSparks, LsStar, LsStarOutline } from '../../assets/icons';
 import { userDisplayName } from '../../utils/utilities'; 
-import { TimeAgo }  from '../../common/TimeAgo/TimeAgo';
+import { TimeAgo } from '../../common/TimeAgo/TimeAgo';
 import './AnnotationButton.styl';
 import { useCallback, useEffect, useState } from 'react';
 import { Dropdown } from '../../common/Dropdown/Dropdown';
@@ -185,7 +185,7 @@ export const AnnotationButton = observer(({ entity, capabilities, annotationStor
       <Elem name='contextMenu'>
         <Dropdown.Trigger
           content={<ContextMenu entity={entity} capabilities={capabilities} annotationStore={annotationStore} />}
-          onToggle={(isVisible)=> setIsContextMenuOpen(isVisible)}
+          onToggle={(isVisible) => setIsContextMenuOpen(isVisible)}
         >
           <Elem name='ellipsisIcon'>
             <IconEllipsis width={28} height={28}/>

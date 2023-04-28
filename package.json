@@ -85,6 +85,7 @@
     "text-annotation"
   ],
   "dependencies": {
+    "@heartexlabs/label-studio": "^1.4.0",
     "@martel/audio-file-decoder": "2.3.15",
     "@thi.ng/rle-pack": "^2.1.6",
     "@types/react-beautiful-dnd": "^13.1.3",

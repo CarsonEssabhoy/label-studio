@@ -139,7 +139,7 @@ class RichTextPieceView extends Component {
   _moveElements(src, dest, withSubstitution) {
     const fragment = document.createDocumentFragment();
 
-    for (let i = 0;i < src.childNodes.length;  withSubstitution && i++){
+    for (let i = 0;i < src.childNodes.length; withSubstitution && i++) {
       const currentChild = src.childNodes[i];
 
       if (withSubstitution) {

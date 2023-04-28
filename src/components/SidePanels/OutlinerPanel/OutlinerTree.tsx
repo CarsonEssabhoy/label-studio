@@ -43,27 +43,27 @@ const OutlinerTreeComponent: FC<OutlinerTreeProps> = ({
   const eventHandlers = useEventHandlers({ onHover });
   const regionsTree = useDataTree({ regions, hovered, rootClass, selectedKeys });
 
-  if( isFF(FF_DEV_2755) ) {
-    const [collapsedPos, setCollapsedPos] = useState( localStorage.getItem( localStoreName )?.split?.(',')?.filter( pos => !!pos ) ?? [] );
+  if (isFF(FF_DEV_2755)) {
+    const [collapsedPos, setCollapsedPos] = useState(localStorage.getItem(localStoreName)?.split?.(',')?.filter(pos => !!pos) ?? []);
 
-    const updateLocalStorage = ( collapsedPos: Array<string> ) => {
-      localStorage.setItem( localStoreName, collapsedPos.join(',') );
+    const updateLocalStorage = (collapsedPos: Array<string>) => {
+      localStorage.setItem(localStoreName, collapsedPos.join(','));
     };
 
-    const collapse = ( pos: string ) => {
+    const collapse = (pos: string) => {
       const newCollapsedPos = [...collapsedPos, pos];
 
-      setCollapsedPos( newCollapsedPos );
-      updateLocalStorage( newCollapsedPos );
+      setCollapsedPos(newCollapsedPos);
+      updateLocalStorage(newCollapsedPos);
     };
 
-    const expand = ( pos: string ) => {
-      const newCollapsedPos = collapsedPos.filter( cPos => cPos !== pos );
+    const expand = (pos: string) => {
+      const newCollapsedPos = collapsedPos.filter(cPos => cPos !== pos);
 
-      setCollapsedPos( newCollapsedPos );
-      updateLocalStorage( newCollapsedPos );
+      setCollapsedPos(newCollapsedPos);
+      updateLocalStorage(newCollapsedPos);
     };
-    const expandedKeys = regionsTree.filter( (item: any) => !collapsedPos.includes( item.pos ) ).map( (item: any) => item.key ) ?? [];
+    const expandedKeys = regionsTree.filter((item: any) => !collapsedPos.includes(item.pos)).map((item: any) => item.key) ?? [];
 
     return (
       <OutlinerContext.Provider value={{ regions }}>
@@ -82,7 +82,7 @@ const OutlinerTreeComponent: FC<OutlinerTreeProps> = ({
             icon={({ entity }: any) => <NodeIconComponent node={entity}/>}
             switcherIcon={({ isLeaf }: any) => <SwitcherIcon isLeaf={isLeaf}/>}
             expandedKeys={expandedKeys}
-            onExpand={( internalExpandedKeys, { node } ) => {
+            onExpand={(internalExpandedKeys, { node }) => {
               const region = regionsTree.find((region: any) => region.key === node.key);
               const pos = region.pos;
 
@@ -388,7 +388,7 @@ const RegionControls: FC<RegionControlsProps> = observer(({
   const onToggleHidden = useCallback(() => {
     if (type?.includes('region') || type?.includes('range')) {
       entity.toggleHidden();
-    } else if(!type || type.includes('label')) {
+    } else if (!type || type.includes('label')) {
       regionStore.setHiddenByLabel(!hidden, entity);
     }
   }, [item, item?.toggleHidden, hidden]);
@@ -472,7 +472,7 @@ const RegionItemDesc: FC<RegionItemOCSProps> = observer(({
   return (
     <Block
       name="ocr"
-      mod={{ collapsed, empty: !(controls?.length > 0)  }}
+      mod={{ collapsed, empty: !(controls?.length > 0) }}
       onClick={onClick}
       onDragStart={(e: any) => e.stopPropagation()}
     >
@@ -492,7 +492,7 @@ const RegionItemDesc: FC<RegionItemOCSProps> = observer(({
               color={css}
               outliner
             />
-          ): null;
+          ) : null;
         })}
       </Elem>
     </Block>

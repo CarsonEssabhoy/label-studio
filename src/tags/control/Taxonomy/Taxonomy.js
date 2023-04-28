@@ -71,7 +71,7 @@ function traverse(root) {
     const uniq = new Set();
     const result = [];
 
-    for(const child of nodes) {
+    for (const child of nodes) {
       if (uniq.has(child.value)) continue;
       uniq.add(child.value);
       result.push(visitNode(child, path));

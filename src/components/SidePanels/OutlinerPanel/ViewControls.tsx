@@ -40,7 +40,7 @@ export const ViewControls: FC<ViewControlsProps> = ({
 }) => {
   const context = useContext(SidePanelsContext);
   const getGrouppingLabels = useCallback((value: GroupingOptions): LabelInfo => {
-    switch(value) {
+    switch (value) {
       case 'manual': return {
         label: 'Group Manually',
         selectedLabel: 'Manual Grouping',
@@ -60,7 +60,7 @@ export const ViewControls: FC<ViewControlsProps> = ({
   }, []);
 
   const getOrderingLabels = useCallback((value: OrderingOptions): LabelInfo => {
-    switch(value) {
+    switch (value) {
       case 'date': return {
         label: 'Order by Time',
         selectedLabel: 'Ordered by Time',

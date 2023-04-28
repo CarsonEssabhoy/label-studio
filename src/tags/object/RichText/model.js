@@ -102,7 +102,7 @@ const Model = types
     },
 
     get isReady() {
-      return self.isLoaded  && self._isReady;
+      return self.isLoaded && self._isReady;
     },
   }))
   .volatile(() => ({

@@ -37,7 +37,7 @@ const EllipseRegionAbsoluteCoordsDEV3793 = types
       self.startX = self.x;
       self.startY = self.y;
 
-      switch (self.coordstype)  {
+      switch (self.coordstype) {
         case 'perc': {
           self.relativeX = self.x;
           self.relativeY = self.y;

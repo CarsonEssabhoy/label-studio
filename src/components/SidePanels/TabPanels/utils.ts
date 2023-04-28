@@ -50,7 +50,7 @@ export const setActiveDefaults = (state: Record<string, PanelBBox>) => {
   Object.keys(state).forEach((panelKey: string) => {
     const firstActiveTab = newState[panelKey].panelViews.findIndex((view) => view.active) ;
     
-    newState[panelKey].panelViews[firstActiveTab > 0 ? firstActiveTab :  0].active = true;
+    newState[panelKey].panelViews[firstActiveTab > 0 ? firstActiveTab : 0].active = true;
   });
 
   return newState;
@@ -273,8 +273,8 @@ export const savePanels = (panelData: Record<string, PanelBBox>) => {
   window.localStorage.setItem('panelState', JSON.stringify(panelData));
 };
 
-export const getLeftKeys = (state: Record<string, PanelBBox>) =>  Object.keys(state).filter((key) => !state[key].detached && state[key].alignment === Side.left);
-export const getRightKeys = (state: Record<string, PanelBBox>) =>  Object.keys(state).filter((key) => !state[key].detached && state[key].alignment === Side.right);
+export const getLeftKeys = (state: Record<string, PanelBBox>) => Object.keys(state).filter((key) => !state[key].detached && state[key].alignment === Side.left);
+export const getRightKeys = (state: Record<string, PanelBBox>) => Object.keys(state).filter((key) => !state[key].detached && state[key].alignment === Side.right);
 
 export const getAttachedPerSide = (state: Record<string, PanelBBox>, side: string) => {
   if (side === Side.left) return getLeftKeys(state).sort((a, b) => state[a].order - state[b].order);

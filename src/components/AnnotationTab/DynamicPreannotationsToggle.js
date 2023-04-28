@@ -33,34 +33,6 @@ export const DynamicPreannotationsToggle = injector(observer(({
 
   return enabled ? (
     <Block name="dynamic-preannotations">
-      <Elem name="wrapper">
-        <Space spread>
-          <Toggle
-            checked={store.autoAnnotation}
-            onChange={(e) => {
-              const checked = e.target.checked;
-
-              store.setAutoAnnotation(checked);
-
-              if (!checked) {
-                ToolsManager.allInstances().forEach(inst => inst.selectDefault());
-              }
-            }}
-            label="Auto-Annotation"
-            style={{ color: '#7F64FF' }}
-          />
-          {suggestions.size > 0 && (
-            <Space size="small">
-              <Elem name="action" tag={Button} mod={{ type: 'reject' }} onClick={() => annotation.rejectAllSuggestions()}>
-                <IconCross/>
-              </Elem>
-              <Elem name="action" tag={Button} mod={{ type: 'accept' }} onClick={() => annotation.acceptAllSuggestions()}>
-                <IconCheck/>
-              </Elem>
-            </Space>
-          )}
-        </Space>
-      </Elem>
     </Block>
   ) : null;
 }));

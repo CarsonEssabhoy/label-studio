@@ -146,7 +146,7 @@ export const HighlightMixin = types
     beforeDestroy() {
       try {
         self._stylesheet.remove();
-      } catch(e) { /* somthing went wrong */ }
+      } catch (e) { /* somthing went wrong */ }
     },
 
     /**

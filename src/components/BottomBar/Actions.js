@@ -48,12 +48,6 @@ export const Actions = ({ store }) => {
 
       {store.hasInterface('ground-truth') && <GroundTruth entity={entity}/>}
 
-      {!isViewAll && (
-
-        <Elem name="section">
-          <DynamicPreannotationsToggle />
-        </Elem>
-      )}
     </Elem>
   );
 };

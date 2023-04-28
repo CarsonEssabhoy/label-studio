@@ -154,14 +154,14 @@ const notbetween = (items: any[], filterItem: FilterListInterface) => {
 };
 
 const regex = (items: any[], filterItem: FilterListInterface) => {
-  try{
+  try {
     return items.filter((obj) => {
       const item = getFilteredPath(filterItem.path, obj);
       const regex = new RegExp(filterItem.value, 'g');
 
       return item.match(regex);
     });
-  } catch(e) {
+  } catch (e) {
     return items;
   }
 };
@@ -174,7 +174,7 @@ const empty = (items: any[], filterItem: FilterListInterface) => {
   });
 };
 
-const getFilteredPath = (path: string | string[], items: any[], separator='.') => {
+const getFilteredPath = (path: string | string[], items: any[], separator = '.') => {
   const properties = Array.isArray(path) ? path : path.split(separator);
 
   return properties.reduce((prev, curr) => prev?.[curr], items);

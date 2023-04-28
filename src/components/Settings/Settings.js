@@ -58,7 +58,7 @@ const HotkeysDescription = () => {
 const GeneralSettings = observer(({ store }) => {
   return (
     <Block name="settings">
-      {Object.keys(EditorSettings).map((obj, index)=> {
+      {Object.keys(EditorSettings).map((obj, index) => {
         return (
           <Elem name="field" key={index}>
             <Checkbox

@@ -1,15 +1,42 @@
 <View>
-  <Labels name="label" toName="audio" choice="multiple">
-    <Label value="Cough" background="#98C84E"></Label>
+  <Header value="Indicate Location of Cough" />
+  <Labels name="labels" toName="audio">
+    <Label value="Cough" selected="false" background="#3578de"/>
   </Labels>
-  <Header value="Listen the audio:"></Header>
-  <AudioPlus name="audio" value="$url" cursorcolor="#FF0000" cursorwidth="4"/>
-  <Header value="Reason" />
-  <Choices name="reason" toName="audio" perRegion="false" required="true" choice="multiple">
-    <Choice value="No cough"/>
-    <Choice value="Background noise"/>
-    <Choice value="Talking"/>
-    <Choice value="Poor audio quality"/>
-  </Choices>
+  <Collapse>
+    <Panel value="Instructions">
+      <View>
+        <Style>.instructions {font-size: 10px; font-weight: 100} </Style>
+        <Text className ="instructions" name="textInstructions" 
+        value="Once cough button above is highlighted, select location of cough by clicking and dragging your mouse on the spectrogram. You have the ability to select multiple regions on spectrogram. The beginning and end of each cough annotation can be changed by hovering over the end and dragging it to the desired location. You can change where the cough annotation is by dragging the center of the annotation to the desired location. Once you have listened to the cough audio, select the quality of the sample. If the sample is bad quality, indicate why it is a poor quality audio sample with the checkboxes or text box below." />
+      </View>
+    </Panel>
+  </Collapse>
+  <Audio name="audio" value="$url"/>
   <TextArea name="comment" toName="audio" editable="true" placeholder="Write any additional notes here..." />
+  <Style>.about { display: flex; justify-content: space-between; align-items: flex-start; }</Style>
+  <Style>.box { border-radius: 8px; padding: 4px 16px; margin-top: 8px; }</Style>
+  <Style>.quality { background: #ddf5e6; }</Style>
+  <Style>.reject { background: #dee8fa; }</Style>
+  <View className="about">
+    <View className="reject box">
+      <Header value="Sample Issues"/>
+      <Choices name="issues" toName="audio" perRegion="false" required="false" choice="multiple">
+        <Choice value="No cough"/>
+        <Choice value="Background noise"/>
+        <Choice value="Talking"/>
+        <Choice value="Poor mic quality"/>
+        <Choice value="Too quiet"/>
+      </Choices>
+    </View>
+    <View className="quality box">
+      <Header value="Sample Quality"/>
+      <Header value="CR: $clipping_ratio" size="5"/>
+      <Header value="BGN: $bgnoise_detected" size="5"/>
+      <Choices name="quality" toName="audio" perRegion="false" required="true" choice="single">
+        <Choice value="Good"/>
+        <Choice value="Bad"/>
+      </Choices>
+    </View>
+  </View>
 </View>

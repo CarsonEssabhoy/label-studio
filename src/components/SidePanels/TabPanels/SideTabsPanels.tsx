@@ -238,7 +238,7 @@ const SideTabsPanelsComponent: FC<SidePanelsProps> = ({
           storedTop: undefined,
           maxHeight,
           width: clamp(w, DEFAULT_PANEL_WIDTH, panelMaxWidth),
-          height: panelData[panelKey].detached? clamp(h, DEFAULT_PANEL_HEIGHT, DEFAULT_PANEL_MAX_HEIGHT) : panelData[panelKey].height,
+          height: panelData[panelKey].detached ? clamp(h, DEFAULT_PANEL_HEIGHT, DEFAULT_PANEL_MAX_HEIGHT) : panelData[panelKey].height,
         });
       });
     });
@@ -311,8 +311,8 @@ const SideTabsPanelsComponent: FC<SidePanelsProps> = ({
     const panelRightWidth = rightKeys.length && panelData[rightKeys[0]].width || 0;
     const visibilityLeft = allLeftNotVisible ? 0 : panelLeftWidth;
     const visibilityRight = allRightNotVisible ? 0 : panelRightWidth;
-    const paddingLeft = panelBreakPoint ? 0 : leftCollapsed ?  PANEL_HEADER_HEIGHT : visibilityLeft ;
-    const paddingRight = panelBreakPoint ? 0 :  rightCollapsed ? PANEL_HEADER_HEIGHT : visibilityRight;
+    const paddingLeft = panelBreakPoint ? 0 : leftCollapsed ? PANEL_HEADER_HEIGHT : visibilityLeft ;
+    const paddingRight = panelBreakPoint ? 0 : rightCollapsed ? PANEL_HEADER_HEIGHT : visibilityRight;
 
     return ({
       paddingLeft,
@@ -336,7 +336,7 @@ const SideTabsPanelsComponent: FC<SidePanelsProps> = ({
 
     const panels = Object.entries(panelData);
 
-    for(const [name, panelDatum] of panels) {
+    for (const [name, panelDatum] of panels) {
       const { alignment, detached } = panelDatum;
       const attachedKeys = getAttachedPerSide(panelData, alignment);
 
@@ -381,7 +381,7 @@ const SideTabsPanelsComponent: FC<SidePanelsProps> = ({
     const observer = new ResizeObserver(() => {
       const { clientWidth, clientHeight } = root ?? {};
       
-      if(viewportSize.current.height !== clientHeight) setPanelData(getSnappedHeights(panelData, clientHeight));
+      if (viewportSize.current.height !== clientHeight) setPanelData(getSnappedHeights(panelData, clientHeight));
       // Remember current width and height of the viewport
       viewportSize.current.width = clientWidth ?? 0;
       viewportSize.current.height = clientHeight ?? 0;
@@ -408,7 +408,7 @@ const SideTabsPanelsComponent: FC<SidePanelsProps> = ({
     };
   }, []);
 
-  const emptyBaseProps = { ...partialEmptyBaseProps,  ...commonProps, breakPointActiveTab, setBreakPointActiveTab };
+  const emptyBaseProps = { ...partialEmptyBaseProps, ...commonProps, breakPointActiveTab, setBreakPointActiveTab };
 
   return (
     <SidePanelsContext.Provider value={contextValue}>
@@ -437,7 +437,7 @@ const SideTabsPanelsComponent: FC<SidePanelsProps> = ({
                     </PanelTabsBase>
                   </Elem>
                 </>
-              ):(
+              ) : (
                 <>
                   {Object.entries(panels).map(([panelType, panels], iterator) => {
                     const content = panels.sort((a, b) => a.order - b.order).map((baseProps, index) => {

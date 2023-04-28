@@ -223,7 +223,7 @@ const VideoRegionsPure = ({
         <Layer {...layerProps}>
           <SelectionRect {...newRegion}/>
         </Layer>
-      ): null}
+      ) : null}
       {!item.annotation?.isReadOnly() && selected?.length > 0 ? (
         <Layer>
           <Transformer
@@ -235,7 +235,7 @@ const VideoRegionsPure = ({
             onDragMove={createOnDragMoveHandler(workinAreaCoordinates, !allowRegionsOutsideWorkingArea)}
           />
         </Layer>
-      ): null}
+      ) : null}
     </Stage>
   );
 };

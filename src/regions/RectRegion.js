@@ -32,7 +32,7 @@ const RectRegionAbsoluteCoordsDEV3793 = types
   }))
   .actions(self => ({
     afterCreate() {
-      switch (self.coordstype)  {
+      switch (self.coordstype) {
         case 'perc': {
           self.relativeX = self.x;
           self.relativeY = self.y;
