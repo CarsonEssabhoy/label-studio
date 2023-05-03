@@ -1,7 +1,7 @@
 <View>
-  <Header value="Indicate Location of Cough" />
   <Labels name="labels" toName="audio">
-    <Label value="Cough" selected="false" background="#3578de"/>
+    <Label value="Cough" selected="true" background="#34d974"/>
+    <Label value="Breath" background="#d9d9d9"/>
   </Labels>
   <Collapse>
     <Panel value="Instructions">
@@ -12,9 +12,9 @@
       </View>
     </Panel>
   </Collapse>
-  <Audio name="audio" value="$url"/>
+  <Audio name="audio" value="$audio"/>
   <TextArea name="comment" toName="audio" editable="true" placeholder="Write any additional notes here..." />
-  <Style>.about { display: flex; justify-content: space-between; align-items: flex-start; }</Style>
+  <Style>.about { display: flex; justify-content: flex-start; align-items: flex-start; gap: 16px; }</Style>
   <Style>.box { border-radius: 8px; padding: 4px 16px; margin-top: 8px; }</Style>
   <Style>.quality { background: #ddf5e6; }</Style>
   <Style>.reject { background: #dee8fa; }</Style>
