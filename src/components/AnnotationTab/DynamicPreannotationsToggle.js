@@ -1,11 +1,6 @@
 import { inject, observer } from 'mobx-react';
 import { useEffect } from 'react';
-import { IconCheck, IconCross } from '../../assets/icons';
-import { Button } from '../../common/Button/Button';
-import { Space } from '../../common/Space/Space';
-import Toggle from '../../common/Toggle/Toggle';
-import ToolsManager from '../../tools/Manager';
-import { Block, Elem } from '../../utils/bem';
+import { Block } from '../../utils/bem';
 import './DynamicPreannotationsToggle.styl';
 
 const injector = inject(({ store }) => {
@@ -22,8 +17,6 @@ const injector = inject(({ store }) => {
 
 export const DynamicPreannotationsToggle = injector(observer(({
   store,
-  annotation,
-  suggestions,
 }) => {
   const enabled = store.hasInterface('auto-annotation') && !store.forceAutoAnnotation;
 

@@ -42,7 +42,6 @@ import { SideTabsPanels } from '../SidePanels/TabPanels/SideTabsPanels';
 import { Block, Elem } from '../../utils/bem';
 import './App.styl';
 import { Space } from '../../common/Space/Space';
-import { DynamicPreannotationsControl } from '../AnnotationTab/DynamicPreannotationsControl';
 import { isDefined } from '../../utils/utilities';
 import { FF_DEV_1170, FF_DEV_3873, isFF } from '../../utils/feature-flags';
 import { Annotation } from './Annotation';

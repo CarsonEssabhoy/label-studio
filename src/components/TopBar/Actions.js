@@ -1,16 +1,14 @@
-import { IconCopy, IconInfo, IconViewAll, LsSettings, LsTrash } from '../../assets/icons';
+import { IconInfo, IconViewAll, LsSettings } from '../../assets/icons';
 import { Button } from '../../common/Button/Button';
 import { Tooltip } from '../../common/Tooltip/Tooltip';
 import { Elem } from '../../utils/bem';
 import { GroundTruth } from '../CurrentEntity/GroundTruth';
 import { EditingHistory } from './HistoryActions';
-import { confirm } from '../../common/Modal/Modal';
 import { useCallback } from 'react';
 
 export const Actions = ({ store }) => {
   const annotationStore = store.annotationStore;
   const entity = annotationStore.selected;
-  const saved = !entity.userGenerate || entity.sentUserGenerate;
   const isPrediction = entity?.type === 'prediction';
   const isViewAll = annotationStore.viewingAll;
 

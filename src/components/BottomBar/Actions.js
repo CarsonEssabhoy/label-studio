@@ -2,7 +2,6 @@ import { IconInfoOutline, LsSettingsAlt } from '../../assets/icons';
 import { Button } from '../../common/Button/Button';
 import { Elem } from '../../utils/bem';
 import { EditingHistory } from './HistoryActions';
-import { DynamicPreannotationsToggle } from '../AnnotationTab/DynamicPreannotationsToggle';
 import { GroundTruth } from '../CurrentEntity/GroundTruth';
 import { Tooltip } from '../../common/Tooltip/Tooltip';
 

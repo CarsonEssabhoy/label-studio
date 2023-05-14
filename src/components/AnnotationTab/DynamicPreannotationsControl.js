@@ -1,5 +1,4 @@
 import { inject, observer } from 'mobx-react';
-import Input from '../../common/Input/Input';
 import { Block } from '../../utils/bem';
 import './DynamicPreannotationsControl.styl';
 
