@@ -1,0 +1,9 @@
+*.ts
+!*.d.ts
+
+# CDK asset staging directory
+aws/.cdk.staging
+aws/cdk.out
+
+cdk/.cdk.staging
+cdk/cdk.out
